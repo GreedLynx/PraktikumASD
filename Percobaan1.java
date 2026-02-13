@@ -57,16 +57,17 @@ public static void main(String[] args) {
 
             //tentukan status lulus atau tidak
             if (grade.equalsIgnoreCase("D") || grade.equalsIgnoreCase("E")) {
-                Status = "TIDAK LULUS";
+                Status = "Anda TIDAK LULUS";
             } else {
-                Status = "LULUS";
+                Status = "Selamat Anda LULUS";
             }
 
             System.out.println("================================================");
             //menampilkan hasil
+            System.out.println("Nilai Akhir: " + nilaiAkhir);
             System.out.println("Grade: " + grade);
-            System.out.println("Kualifikasi: " + kualifikasi);
-            System.out.println("Status: " + Status);
+            System.out.println("=================================================");
+            System.out.println(Status);
         }
     }
 }
