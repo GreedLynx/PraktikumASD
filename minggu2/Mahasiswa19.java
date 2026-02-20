@@ -34,7 +34,10 @@ public class Mahasiswa19 {
     }
 
     String nilaiKinerja(){
-        if (ipk >= 3.5) {
+        if(ipk < 0.00 || ipk > 4.00){
+            return  "IPK tidak valid. Harus antara 0.0 dan 4.0";
+        }
+        else if (ipk >= 3.5) {
             return "Kinerja Sangat Baik";
         } else if (ipk >= 3.0) {
             return "Kinerja Baik";
