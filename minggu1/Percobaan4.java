@@ -38,8 +38,4 @@ public class Percobaan4 {
         System.out.println("--- Laporan Pendapatan & Status Cabang RoyalGarden ---");
         cekPendapatanDanStatus();
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> b99a4bc8d78395771e81f60b792741a9a8e1ffa1

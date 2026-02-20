@@ -73,8 +73,4 @@ public static void main(String[] args) {
         }
     }
 }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> b99a4bc8d78395771e81f60b792741a9a8e1ffa1
