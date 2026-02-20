@@ -48,4 +48,8 @@ public class Tugas1 {
             }
         }
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> b99a4bc8d78395771e81f60b792741a9a8e1ffa1
