@@ -32,7 +32,7 @@ public class MahasiswaBerprestasi19 {
     }
 
     int sequentialSearch (double cari){
-        int posisi = 1;
+        int posisi = -1;
         for (int j = 0 ; j < listMhs.length; j++){
             if (listMhs[j].ipk == cari) {
                 posisi = j;
@@ -59,6 +59,20 @@ public class MahasiswaBerprestasi19 {
         } else {
             System.out.println("data : " + x + " tidak ditemukan");
         }
+    }
 
+    int findBinarySearch (double cari, int left, int right){
+        int mid;
+        if ( right >= left){
+            mid = (left + right)/2;
+            if (cari == listMhs[mid].ipk){
+                return mid;
+            } else if (cari < listMhs[mid].ipk){
+                return findBinarySearch(cari, mid + 1, right);
+            } else {
+                return findBinarySearch(cari, left, mid - 1);
+            }
+        }
+        return -1;
     }
 }
