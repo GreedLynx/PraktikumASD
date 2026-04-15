@@ -22,7 +22,7 @@ public class Kuis19 {
         System.out.println("Gaji Pokok: " + gajiPokok);
         System.out.println("Hari Kerja: " + hariKerja);
         System.out.println("-------------------");
-        System.out.println();
+        System.out.println();N
     }
 
     
