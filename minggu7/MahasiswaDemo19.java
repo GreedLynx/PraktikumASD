@@ -5,7 +5,9 @@ public class MahasiswaDemo19 {
         try (Scanner sc = new Scanner(System.in)){
             MahasiswaBerprestasi19 list = new MahasiswaBerprestasi19();
             
-            int jumMhs = 5;
+            System.out.print("Masukkan jumlah mahasiswa: ");
+            int jumMhs = sc.nextInt();
+            sc.nextLine(); // clear buffer
             
             for(int i = 0; i < jumMhs; i++) {
                 System.out.println("Masukkan Data Mahasiswa ke-" + (i+1));
@@ -52,7 +54,7 @@ public class MahasiswaDemo19 {
             System.out.println("--------------------------------");
             System.out.println("Menggunakan Binary Searching");
             System.out.println("--------------------------------");
-            
+
             double posisi2 = list.findBinarySearch(cari, 0, jumMhs-1);
             int pss2 = (int) posisi2;
             list.tampilPosisi(cari2, pss2);
