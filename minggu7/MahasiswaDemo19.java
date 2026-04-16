@@ -9,23 +9,23 @@ public class MahasiswaDemo19 {
             int jumMhs = sc.nextInt();
             sc.nextLine(); // clear buffer
             
-            for(int i = 0; i < jumMhs; i++) {
-                System.out.println("Masukkan Data Mahasiswa ke-" + (i+1));
-                System.out.print("NIM: ");
-                String nim = sc.nextLine();
-                System.out.print("Nama: ");
-                String nama = sc.nextLine();
-                System.out.print("Kelas: ");
-                String kelas = sc.nextLine();
-                System.out.print("IPK: ");
-                double ipk = sc.nextDouble();
-                sc.nextLine(); // clear buffer
-                
-                Mahasiswa19 m = new Mahasiswa19(nim, nama, kelas, ipk);
-                list.tambah(m);
-            }
+            Mahasiswa19 m1 = new Mahasiswa19("1234", "Andi", "TI-1A", 3.5);
+            Mahasiswa19 m2 = new Mahasiswa19("2345", "Budi", "TI-1B", 3.8);
+            Mahasiswa19 m3 = new Mahasiswa19("3456", "Citra", "TI-1C", 3.2);
+            Mahasiswa19 m4 = new Mahasiswa19("4567", "Dewi", "TI-1D", 3.9);
+            Mahasiswa19 m5 = new Mahasiswa19("5678", "Eka", "TI-1E", 3.7);
+            
+            // menambahkan data mahasiswa ke dalam list
+            list.tambah(m1);
+            list.tambah(m2);
+            list.tambah(m3);
+            list.tambah(m4);
+            list.tambah(m5);
+
+            // menampilkan data mahasiswa sebelum diurutkan
             list.tampil();
             
+            // mengurutkan data mahasiswa berdasarkan IPK menggunakan bubble sort
             list.bubbleSort();
             list.tampil();
 
