@@ -1,14 +1,13 @@
-public class Peminjaman {
+public class Peminjaman19 {
     Mahasiswa19 mhs;
     Buku19 buku;
 
-    int [] dataPeminjaman;
     int lamaPinjam;
     int batasPinjam = 5;
     int terlambat;
     int denda;
 
-    Peminjaman (Mahasiswa19 mhs, Buku19 buku, int lamaPinjam) {
+    Peminjaman19 (Mahasiswa19 mhs, Buku19 buku, int lamaPinjam) {
         this.mhs = mhs;
         this.buku = buku;
         this.lamaPinjam = lamaPinjam;
@@ -27,10 +26,6 @@ public class Peminjaman {
     }
 
     void tampilPeminjaman() {
-        mhs.tampilMahasiswa();
-        buku.tampilBuku();
-        System.out.println("Lama Pinjam : " + lamaPinjam + " hari");
-        System.out.println("Terlambat : " + terlambat + " hari");
-        System.out.println("Denda : Rp " + denda);
+        System.out.println( mhs.nama + " | " + buku.judul + " | Lama: " + lamaPinjam + " hari | Terlambat: " + terlambat + " hari | Denda: Rp" + denda);
     }
 }

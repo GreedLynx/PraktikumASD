@@ -1,5 +1,4 @@
 public class Buku19 {
-    String [] dataBuku;
     String kodeBuku;
     String judul;
     int tahunTerbit;
@@ -11,8 +10,6 @@ public class Buku19 {
     }
 
     void tampilBuku (){
-        System.out.println("Kode Buku : " + kodeBuku);
-        System.out.println("Judul : " + judul);
-        System.out.println("Tahun Terbit : " + tahunTerbit);
+        System.out.println("Kode Buku : " + kodeBuku + " | Judul: " + judul + " | Tahun Terbit: " + tahunTerbit);
     }
 }
