@@ -34,7 +34,7 @@ public class MahasiswaDemo19 {
                     break;
                 }
                 case 2 -> {
-                    Mahasiswa19 dinilai = stack.pop();
+                    Mahasiswa19 dinilai = stack.peek();
                     if (dinilai != null) {
                         System.out.println("Menilai tugas dari " + dinilai.nama);
                         System.out.print("Masukkan nilai (0-100): ");
