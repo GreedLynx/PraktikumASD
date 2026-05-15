@@ -16,7 +16,8 @@ public class MahasiswaDemo19 {
             System.out.println("3. Melihat Tugas Teratas");
             System.out.println("4. Melihat Daftar Tugas");
             System.out.println("5. Melihat Tugas Terbawah");
-            System.out.println("6. Keluar");
+            System.out.println("6. Menghitung Jumlah Tugas");
+            System.out.println("7. Keluar");
             System.out.print("Pilih: ");
             pilih = input.nextInt();
             input.nextLine(); // Membersihkan buffer
@@ -62,10 +63,13 @@ public class MahasiswaDemo19 {
                     stack.bottomPrint();
                     break;
                 }
-                case 6 -> System.out.println("Keluar dari program.");
+                case 6 -> {
+                    System.out.println("Jumlah tugas yang telah dikumpulkan: " + stack.count());
+                    break;
+                }
+                case 7 -> System.out.println("Keluar dari program.");
                 default -> System.out.println("Pilihan tidak valid, silakan coba lagi.");
             }
-
         } while (pilih >= 1 && pilih <= 6);
     }
 }
