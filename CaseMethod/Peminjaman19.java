@@ -6,6 +6,8 @@ public class Peminjaman19 {
     int batasPinjam = 5;
     int terlambat;
     int denda;
+    // Modifikasi A3
+    String kategoriLamaPinjam;
 
     Peminjaman19 (Mahasiswa19 mhs, Buku19 buku, int lamaPinjam) {
         this.mhs = mhs;
@@ -13,6 +15,8 @@ public class Peminjaman19 {
         this.lamaPinjam = lamaPinjam;
 
         hitungDenda();
+        // ModifikasiA3
+        statusLamaPinjam();
     }
 
     void hitungDenda(){
@@ -25,7 +29,18 @@ public class Peminjaman19 {
         }
     }
 
+    // Modifikasi A3
+    void statusLamaPinjam(){
+        if (lamaPinjam <= 3) {
+            kategoriLamaPinjam = "Cepat";
+        } else if (lamaPinjam == 4 || lamaPinjam == 5) {
+            kategoriLamaPinjam = "Normal";
+        } else {
+            kategoriLamaPinjam = "Lama";
+        }
+    }
+
     void tampilPeminjaman() {
-        System.out.println( mhs.nama + " | " + buku.judul + " | Lama: " + lamaPinjam + " hari | Terlambat: " + terlambat + " hari | Denda: Rp" + denda);
+        System.out.println( mhs.nama + " | " + buku.judul + " | Lama: " + lamaPinjam + " hari | Terlambat: " + terlambat + " hari | Denda: Rp" + denda + " | kategori:" + kategoriLamaPinjam);
     }
 }

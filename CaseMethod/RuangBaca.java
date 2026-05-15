@@ -32,6 +32,8 @@ public class RuangBaca {
                 System.out.println("3. Tampilkan Peminjaman");
                 System.out.println("4. Urutkan Berdasarkan Denda");
                 System.out.println("5. Cari Berdasarkan NIM");
+                System.out.println("6. Cari Berdasarkan Nama");
+                System.out.println("7. Hitung rata rata lama Pinjam per Mahasiswa");
                 System.out.println("0. Keluar");
                 System.out.print("Pilih: ");
                 pilih = input.nextInt();
@@ -59,6 +61,15 @@ public class RuangBaca {
                         System.out.print("Masukkan NIM yang ingin dicari: ");
                         String nimCari = input.nextLine();
                         manager.cariBerdasarkanNIM(nimCari);
+                    }
+                    case 6 -> { // Modifikasi B3
+                        System.out.print("Masukkan Nama yang dicari: ");
+                        String namaCari = input.nextLine();
+                        manager.cariBerdasarkanNama(namaCari);
+                    } // Modifikasi C3
+                    case 7 -> {
+                        System.out.println("\nRata-rata Lama Pinjam Mahasiswa:");
+                        System.out.println(manager.hitungRerataLamaPinjamPerMahasiswa() + " hari");
                     }
                     case 0 -> System.out.println("Keluar program...");
                     default -> System.out.println("Pilihan tidak valid.");

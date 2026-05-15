@@ -46,7 +46,7 @@ public class PeminjamanManager19 {
             Peminjaman19 temp = daftarPinjam[i];
             int j = i - 1;
 
-            while (j >= 0 && daftarPinjam[j].denda < temp.denda) {
+            while (j >= 0 && daftarPinjam[j].mhs.nim.compareTo(temp.mhs.nim) > 0) {
                 daftarPinjam[j + 1] = daftarPinjam[j];
                 j--;
             }   
@@ -93,5 +93,76 @@ public class PeminjamanManager19 {
         if (!ketemu) {
             System.out.println("Data tidak ditemukan.");
         }
+    }
+
+    // Modifikasi B3 sorting 
+    public void urutBerdasarkanNama () {
+        for (int i = 1; i < idx; i++) {
+            Peminjaman19 temp = daftarPinjam[i];
+            int j = i - 1;
+
+            while (j >= 0 && daftarPinjam[j].mhs.nama.compareTo(temp.mhs.nama) > 0) {
+                daftarPinjam[j + 1] = daftarPinjam[j];
+                j--;
+            }   
+            daftarPinjam[j + 1] = temp;
+        }
+    }
+
+    // Modifikasi B3 cari berdasarkan nama
+    public void cariBerdasarkanNama (String namaCari){
+        urutBerdasarkanNama();
+
+        int left = 0;
+        int right = idx - 1;
+        boolean ketemu = false;
+
+        // Binary search untuk mencari nama yang sama
+        while (left <= right) {
+            int mid = left + right / 2;
+            if (daftarPinjam[mid].mhs.nama.equals(namaCari)) {
+                System.out.println("Data ditemukan:");
+                daftarPinjam[mid].tampilPeminjaman();
+                ketemu = true;
+                
+                // Cek ke kiri dan kanan untuk data dengan Nama yang sama
+                int tempKiri = mid -1;
+                while (tempKiri >= 0 && daftarPinjam[tempKiri].mhs.nama.equals(namaCari)) {
+                    daftarPinjam[tempKiri].tampilPeminjaman();
+                    tempKiri--;
+                }
+
+                // Cek ke kanan untuk data dengan Nama yang sama
+                int tempKanan = mid + 1;
+                while (tempKanan < idx && daftarPinjam[tempKanan].mhs.nama.equals(namaCari)){
+                    daftarPinjam[tempKanan].tampilPeminjaman();
+                    tempKanan++;
+                }
+                return;
+            } else if (namaCari.compareTo(daftarPinjam[mid].mhs.nama) < 0) {
+                right = mid -1;
+            } else {
+                left = mid + 1;
+            }
+            
+        }
+        if (!ketemu) {
+            System.out.println("Data tidak ditemukan.");
+        }
+    }
+
+    // Modifikasi C3 Hitung Rerata lama pinjam 
+    double hitungRerataLamaPinjamPerMahasiswa(){
+
+        double totalLamaPinjam = 0;
+        double rerataLamaPinjam = 0;
+
+        for (int i = 0; i < idx ; i++){
+            if (daftarPinjam[i].lamaPinjam > 0) {
+                totalLamaPinjam += daftarPinjam[i].lamaPinjam;
+                rerataLamaPinjam = totalLamaPinjam / idx;
+            }
+        }
+        return rerataLamaPinjam;
     }
 }
