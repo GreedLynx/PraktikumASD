@@ -36,9 +36,9 @@ public class StackTugasMahasiswa19 {
 
     public Mahasiswa19 pop () {
         if (!isEmpty()) {
-            Mahasiswa19 m = stack[top];
+            Mahasiswa19 mhs = stack[top];
             top --;
-            return m;
+            return mhs;
         } else {
             System.out.println("Stack kosong, tidak dapat menghapus data.");
             return null;
@@ -60,5 +60,14 @@ public class StackTugasMahasiswa19 {
             System.out.println(stack[i].nama + "\t" + stack[i].nim + "\t" + stack[i].kelas);
         }
         System.out.println ("");
+    }
+
+    public void bottomPrint () {
+        if (!isEmpty()) {
+            System.out.println("Data stack:");
+            System.out.println(stack[0].nama + "\t" + stack[0].nim + "\t" + stack[0].kelas);
+        } else {
+            System.out.println ("Stack kosong! Tidak ada data untuk ditampilkan");
+        }
     }
 }
