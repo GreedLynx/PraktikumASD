@@ -23,7 +23,7 @@ public class SuratDemo19 {
                     String idSurat = input.nextLine();
                     System.out.print("Nama Mahasiswa: ");
                     String namaMahasiswa = input.nextLine();
-                    System.out.print("Kelas:");
+                    System.out.print("Kelas: ");
                     String kelas = input.nextLine();
                     System.out.print("Jenis Izin (S = Sakit, I = Izin, A = Alpa): ");
                     char jenisIzin = input.nextLine().charAt(0);
