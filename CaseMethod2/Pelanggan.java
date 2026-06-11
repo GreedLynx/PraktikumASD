@@ -1,11 +1,11 @@
 public class Pelanggan {
-    int NoAntrian;
+    int noAntrian;
     String namaPembeli;
     String noHP;
     Pesanan pesanan;
 
-    public Pelanggan(int NomerAntrian, String namaPembeli, String noHP) {
-        this.NoAntrian = NomerAntrian;
+    public Pelanggan(int noAntrian, String namaPembeli, String noHP) {
+        this.noAntrian = noAntrian;
         this.namaPembeli = namaPembeli;
         this.noHP = noHP;
         this.pesanan = null;
@@ -13,7 +13,7 @@ public class Pelanggan {
 
     public void tampil() {
         System.out.println(
-            "NOMER ANTRIAN :" + NoAntrian + 
+            "NOMER ANTRIAN :" + noAntrian + 
             "\nNAMA  :" + namaPembeli + 
             "\nNO HP :" + noHP );
     }

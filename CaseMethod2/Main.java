@@ -1,5 +1,4 @@
 import java.util.Scanner;
-
 public class Main {
     public final static Scanner input = new Scanner(System.in);
 
@@ -20,7 +19,7 @@ public class Main {
             input.nextLine(); // Clear the newline character
 
             switch (pilihan) {
-                case 1:
+                case 1 -> {
                     System.out.print("Masukkan Nama Pelanggan : ");
                     String nama = input.nextLine();
 
@@ -28,17 +27,15 @@ public class Main {
                     String noHP = input.nextLine();
 
                     Pelanggan pelangganBaru = new Pelanggan(noAntrian, nama, noHP);
-                    antrean.TambahPelanggan(pelangganBaru);
+                    antrean.tambahPelanggan(pelangganBaru);
                     noAntrian++;
                     System.out.println("Pelanggan berhasil ditambahkan ke antrean.");
-                    break;
+                }
 
-                case 2:
-                    antrean.tampilkanAntreanTunggu();
-                    break;
+                case 2 -> antrean.tampilkanAntreanTunggu();
 
-                case 3:
-                    Pelanggan p = antrean.LayaniPelanggan();
+                case 3 -> {
+                    Pelanggan p = antrean.layaniPelanggan();
                     if (p != null) {
                         System.out.print("Kode Pesanan    : ");
                         int kodePesanan = input.nextInt();
@@ -51,22 +48,17 @@ public class Main {
                         int harga = input.nextInt();
                         input.nextLine(); // Clear the newline character
                         p.pesanan = new Pesanan(kodePesanan, namaPesanan, harga);
-                        riwayat.TambahPelanggan(p);
+                        riwayat.tambahPelanggan(p);
                     } else {
                         System.out.println("Tidak ada pelanggan dalam antrean.");
                     }
-                    break;
+                }
 
-                case 4:
-                    riwayat.tampilkanLaporanPendapatan();
-                    break;
+                case 4 -> riwayat.tampilkanLaporanPendapatan();
 
-                case 5:
-                    System.out.println("Terima kasih telah menggunakan sistem antrian.");
-                    break;
+                case 5 -> System.out.println("Terima kasih telah menggunakan sistem antrian.");
 
-                default:
-                    System.out.println("Pilihan tidak valid. Silakan coba lagi.");
+                default -> System.out.println("Pilihan tidak valid. Silakan coba lagi.");
             }
         } while (pilihan != 5);
     }
