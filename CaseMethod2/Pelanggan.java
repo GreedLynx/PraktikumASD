@@ -1,22 +1,21 @@
 public class Pelanggan {
     int NoAntrian;
-    String nama;
-    String Pesanan;
-    double harga;
+    String namaPembeli;
+    String noHP;
+    Pesanan pesanan;
 
-    public Pelanggan(int NomerAntrian, String nama, String Pesanan, double harga) {
-        this.NoAntrian = NoAntrian;
-        this.nama = nama;
-        this.Pesanan = "Belum memesan";
-        this.harga = 0;
+    public Pelanggan(int NomerAntrian, String namaPembeli, String noHP) {
+        this.NoAntrian = NomerAntrian;
+        this.namaPembeli = namaPembeli;
+        this.noHP = noHP;
+        this.pesanan = null;
     }
 
     public void tampil() {
         System.out.println(
             "NOMER ANTRIAN :" + NoAntrian + 
-            "\nNAMA  :" + nama + 
-            "\nPESANAN :" + Pesanan + 
-            "\nHARGA :" + harga );
+            "\nNAMA  :" + namaPembeli + 
+            "\nNO HP :" + noHP );
     }
     
 }

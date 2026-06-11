@@ -16,7 +16,7 @@ public class SistemAntrian {
         }
     }
 
-    // Memanggil dan menghapus pelanggan yang sedang dilayani
+    // Memanggil dan menghapus pelanggan yang sedang dilayani remove first
     public Pelanggan LayaniPelanggan() {
         if (isEmpty()) {
             return null;
@@ -34,11 +34,12 @@ public class SistemAntrian {
     public void tampilkanAntreanTunggu(){
         if (isEmpty()) {
             System.out.println("Tidak ada pelanggan dalam antrean.");
+            return;
         } 
         NodePelanggan temp = head;
         System.out.println("Daftar Pelanggan dalam Antrean:");
         while (temp != null) {
-            System.out.println("Nomer Antrian: " + temp.data.NoAntrian + ", Nama: " + temp.data.nama);
+            System.out.println("Nomer Antrian: " + temp.data.NoAntrian + ", Nama: " + temp.data.namaPembeli);
             temp = temp.next;
         }
     }
@@ -46,6 +47,7 @@ public class SistemAntrian {
     public void tampilkanLaporanPendapatan () {
         if (isEmpty()) {
             System.out.println("Belum ada pesanan yang diselesaikan.");
+            return;
         }
 
         NodePelanggan temp = head;
@@ -53,8 +55,8 @@ public class SistemAntrian {
         System.out.println("Laporan Transaksi & Pendapatan :");
         System.out.println("No | Nama Pelanggan | Pesanan \t\t| Harga");
         while (temp != null) {
-            System.out.println(temp.data.NoAntrian + " | " + temp.data.nama + " | " + temp.data.Pesanan + "\t | " + temp.data.harga);
-            totalPendapatan += temp.data.harga;
+            System.out.println(temp.data.NoAntrian + " | " + temp.data.namaPembeli + " | " + temp.data.pesanan.namaPesanan + "\t | " + temp.data.pesanan.harga);
+            totalPendapatan += temp.data.pesanan.harga;
             temp = temp.next;
         }
         System.out.println("Total Pendapatan: Rp" + totalPendapatan);
